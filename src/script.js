@@ -1,13 +1,17 @@
 window.onload = function () {
-    function random(array) {
+    function getRandomIndex(array) {
         return (Math.floor(Math.random() * array.length));
     }
-    let who = ['La conexión a internet', 'Mi mamá', 'El tiempo', 'El trafico'];
-    let action = ['no me dejo entrar a', 'interrumpió', 'canceló', 'entorpeció'];
-    let what = ['la clase', 'la reunión', 'la junta', 'la llamada'];
+    
+    const subjects = ['La conexión a internet', 'Mi mamá', 'El tiempo', 'El tráfico'];
+    const actions = ['no me dejó entrar a', 'interrumpió', 'canceló', 'entorpeció'];
+    const events = ['la clase', 'la reunión', 'la junta', 'la llamada'];
 
+    const randomSubject = subjects[getRandomIndex(subjects)];
+    const randomAction = actions[getRandomIndex(actions)];
+    const randomEvent = events[getRandomIndex(events)];
 
-    let excuse = who[random(who)] + " " + action[random(action)] + " " + what[random(what)] + ".";
+    const excuse = `${randomSubject} ${randomAction} ${randomEvent}.`;
     console.log(excuse)
     document.getElementById("excuse").innerHTML = excuse;
 };
